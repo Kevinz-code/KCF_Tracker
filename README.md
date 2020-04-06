@@ -7,13 +7,13 @@ Date : 28th, March, 2020
 > [High-Speed Tracking with Kernelized Correlation Filters](http://www.robots.ox.ac.uk/~joao/publications/henriques_tpami2015.pdf)<br>
 
 ## The following functions have been accomplished:
-1. hog feature extraction
-2. multi-scale prediction
-3. fixed template [64, 64] for better FFT
-4. gamma correct
-5. roi padding
-6. window margin correction
-7. smooth adaptation for alpha and roi extracted
+- hog feature extraction
+- multi-scale prediction
+- fixed template [64, 64] for better FFT
+- gamma correct
+- roi padding
+- window margin correction
+- smooth adaptation for alpha and roi extracted
 
 ### Requirements
 - Python 2.7 or 3.5
