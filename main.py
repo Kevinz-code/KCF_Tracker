@@ -74,7 +74,7 @@ p.add_argument(
 p.add_argument(
     "--scalethresh",
     type=int,
-    default=3,
+    default=1,
     help="the horizontal and vertical pixel-shift-threshold for scale adjust"
 )
 p.add_argument(
@@ -101,7 +101,7 @@ def get_groundtruth(l):
 
 def get_video():
     # read the default videos
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture("2.mp4")
 
 
     fps = cap.get(cv2.CAP_PROP_FPS)
