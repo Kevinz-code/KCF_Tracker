@@ -246,7 +246,7 @@ class Tracker(object):
 
         # Detect
         # Beginning
-        scale_weight_list = [1.0, 1.0, 1.1]
+        scale_weight_list = [1.0, 0.86, 0.9]
         scale_list = [1.0, 1.0/self.scale, self.scale]
         test_roi_z = [0, 0, 0]
         response = [0, 0, 0]
@@ -270,7 +270,6 @@ class Tracker(object):
             pos_y[2], pos_x[2], peak[2] = self.get_peak(response[2])
 
             idx = int(np.argmax(np.array(peak) * np.array(scale_weight_list)))
-            print(np.array(peak) * np.array(scale_weight_list))
 
             # conditional choose new scale test results
             horizontal_shift = abs(pos_x[idx] - pos_x[0])
@@ -279,6 +278,7 @@ class Tracker(object):
                 idx = 0
             print(idx)
 
+        scale_list = np.array([1.0, 0.90, 0.90]) * np.array(scale_list)  ## smooth update scale
 
         final_pos_y = pos_y[idx]
         final_pos_x = pos_x[idx]
@@ -289,8 +289,8 @@ class Tracker(object):
         # center_y = self.fixed_size[0] / 2  # center shift
         # center_x = self.fixed_size[1] / 2  # center shift
 
-        delta_y = (final_pos_y - 0.5 - center_y) / self.fixed_size[0] * self.region_size[0] * scale_list[idx]
-        delta_x = (final_pos_x - 0.5 - center_x) / self.fixed_size[1] * self.region_size[1] * scale_list[idx]
+        delta_y = (final_pos_y - 0.5 - center_y) / self.fixed_size[0] * self.region_size[0] * scale_list[idx] * self.pad
+        delta_x = (final_pos_x - 0.5 - center_x) / self.fixed_size[1] * self.region_size[1] * scale_list[idx] * self.pad
 
         # update if delta > 0.5 due to int() property
         # restrained within the self.frame
