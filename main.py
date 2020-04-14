@@ -48,21 +48,21 @@ p.add_argument(
     "-M",
     "--multiscale",
     type=bool,
-    default=False,
+    default=True,
     help="multi scale prediction"
 )
 p.add_argument(
     "-p",
     "--pad",
     type=float,
-    default=1.2,
+    default=1.8,
     help="padded roi for robust tracking"
 )
 p.add_argument(
     "-a",
     "--adapt",
     type=float,
-    default=0.075,
+    default=0.01,
     help="adaptation rate for alpha and roi"
 )
 p.add_argument(
@@ -81,7 +81,7 @@ p.add_argument(
     "-g",
     "--TargetGaussianBand",
     type=int,
-    default=30,
+    default=40,
     help="the bandwiths for generating gaussian targets"
 )
 p.add_argument(
