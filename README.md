@@ -1,7 +1,6 @@
 # KCF_Tracker in Python
  
 Algorithms Name: Kernel Correlation Filter For Object Tracking
-Author : Kevin Ke
 Date : 28th, March, 2020 
 
 > [High-Speed Tracking with Kernelized Correlation Filters](http://www.robots.ox.ac.uk/~joao/publications/henriques_tpami2015.pdf)<br>
