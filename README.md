@@ -23,7 +23,7 @@ Date : 28th, March, 2020
 ### Use
 Download the git and
 ```shell
-git clone https://github.com/kevin655/KCF_Tracker.git
+git clone https://github.com/Kevink-code/KCF_Tracker.git
 cd KCF
 python main.py
 ```
